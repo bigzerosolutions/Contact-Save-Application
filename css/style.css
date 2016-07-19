@@ -1,0 +1,62 @@
+.ontop {
+				z-index: 999;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+				position: absolute;				
+				color: #aaaaaa;
+				opacity: .95;
+				filter: alpha(opacity = 50);
+			}
+			#popup {
+				width: 1500px;
+				height: 800px;
+				position: absolute;
+				color: #ffff;
+				/* To align popup window at the center of screen*/
+				top: 20%;
+				left: 20%;
+				margin-top: -100px;
+				margin-left: -150px;
+			}
+			.inputbx{
+				width: 100%;padding: 5px 10px;
+			}
+			.tableHead{
+				padding:5px;
+				text-align: center
+			}
+			.normal-font1{
+				padding:20px 10px;}/*
+			}/onClick="pop('popDiv')"*/
+			.input-style{
+				text-align:center;
+				padding: 5px;
+				width: 50%;
+			}
+			#formId{
+				margin-top: 30%;
+				background:#fff;
+				opacity: 0.9;
+				padding: 30px 20px;
+			}
+			.heading{
+				font-size: 30px;
+				font-weight: 700;
+			}
+			.button-style{
+				background:none;
+				border:none;
+				padding:5px 10px;
+
+			}
+			.button-style:hover{
+				background:#0095FF;
+				font-weight: 700;
+				border:none;
+				color:#fff;
+				padding:5px 20px;
+				text-decoration:none!important; 
+			}
