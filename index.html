@@ -1,0 +1,120 @@
+<HTML>
+	<HEAD>
+		<TITLE>Popup div with disabled background</TITLE>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript">
+			function clearAll(){
+				document.getElementById("frm").reset();			}
+			function pop(div) {
+				document.getElementById(div).style.display = 'block';
+			}
+			function hide(div) {
+				document.getElementById(div).style.display = 'none';
+			}
+			//To detect escape button
+			document.onkeydown = function(evt) {
+				evt = evt || window.event;
+				if (evt.keyCode == 27) {
+					hide('popDiv');
+				}
+			};
+			function validateForm() {
+        	var un = document.frm.username.value;
+        	var pw = document.frm.password.value;
+        	var username = "user"; 
+        	var password = "pass";
+        	if ((un == username) && (pw == password)) {
+           		pop('popDiv');
+        	}
+        	else {
+            	alert ("Login was unsuccessful, please check your username and password");
+            	return false;
+        	}
+  			}
+		</script>
+	</HEAD>
+	<BODY style="background-image:url('contact.jpg');background-size:cover;background-repeat:no-repeat">
+		<div id="popDiv" class="ontop">
+			<div class="row">
+				<div class="col-lg-6" style="background:#fff;height:100%;">
+					<div class="row">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-8 text-center">
+							<p style="font-size:30px;margin-top:10%;padding-bottom:40px;">ADD NEW CONTACT</p>
+							<form>
+								<table align="center" width="100%;">
+									<tr>
+										<td class="normal-font1">Contact ID :</td>
+										<td><input class="inputbx" type="number" id="contactId" disabled=""></td>
+									</tr>
+									<tr>
+										<td class="normal-font1">Contact Name :</td>
+										<td><input class="inputbx" type="text" id="contactName" required=""></td>
+									</tr>
+									
+									<tr>
+										<td class="normal-font1">Contact Number 1:</td>
+										<td><input class="inputbx" type="number" is="contactNumber1" required=""></td>
+									</tr>
+									<tr>
+										<td class="normal-font1">Contact Number 2:</td>
+										<td><input class="inputbx" type="number"  id="contactNumber2" ></td>
+									</tr>
+									
+									<tr>
+										<td class="normal-font1">Contact Mail:</td>
+										<td><input class="inputbx" type="email" id="contactMail" required=""></td>
+									</tr>
+									<tr>
+										<td class="normal-font1">Contact Address :</td>
+										<td><textarea class="inputbx"  id="contactAddress" required=""></textarea></td>
+									</tr>
+								</table>
+								<div align="center">
+									</br></br>
+									<a class="button-style" onClick="addContact()"  name="">ADD CONTACT</a>
+									<a class="button-style" onClick="clearAll()" > CLEAR ALL</a>
+									</br></br>
+								</div>
+							</form>
+						</div>
+						<div class="col-lg-2"></div>
+					</div>
+				</div>
+				<div class="col-lg-6" style="background:#fff;height:100%;">
+					<div class="row text-center">
+							<a id="close" class="btn btn-danger" onClick="hide('popDiv')" style="float:right;right:10%;margin-top:3%;">Close</a>
+							<p style="font-size:30px;margin-top:5%;padding-bottom:40px;">ALL CONTACTS</p>
+							<table align="center" width="100%;" border="1px solid">
+								<tr>
+									<th class="tableHead">Nos</th>
+									<th class="tableHead">Name</th>
+									<th class="tableHead">C.Number 1</th>
+									<th class="tableHead">C.Number 2</th>
+									<th class="tableHead">C.Mail</th>
+									<th class="tableHead">C.Address</th>
+								</tr>
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<CENTER>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form name="frm" id="formId"> 
+    			<p class="heading">Login</p></br>
+        		<input id="username" class="input-style" type="text"  placeholder="username"  required ></br></br>
+        		<input id="password" class="input-style" type="password" placeholder="password"  required ></br></br>
+        		<a class="button-style" href="#" onClick="validateForm()">Sign in</a></br></br>
+				<a style="text-decoration:none" href="#">Forgot Password</a>
+    		</form>
+			
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</CENTER>
+	</BODY>
+</HTML>
